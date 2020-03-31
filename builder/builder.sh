@@ -42,7 +42,7 @@ get_package() {
         cp -r /dnsproviders/$1/$1.go /caddy/dnsproviders/$1/$1.go
         echo "caddy/dnsproviders/$1"
     else
-        echo "use caddyplug"
+        echo "$1"
         GO111MODULE=off GOOS=linux GOARCH=amd64 caddyplug package $1 2> /dev/null
     fi
 }
